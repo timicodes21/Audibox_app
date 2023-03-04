@@ -15,6 +15,7 @@ interface IProps {
   rightIcon?: ReactNode;
   leftIcon?: ReactNode;
   keyboardType?: "numeric";
+  secureTextEntry?: boolean;
 }
 
 const AuthInput: React.FC<IProps> = ({
@@ -27,9 +28,10 @@ const AuthInput: React.FC<IProps> = ({
   rightIcon,
   leftIcon,
   keyboardType,
+  secureTextEntry,
 }) => {
   return (
-    <View>
+    <View style={{ marginTop: 15 }}>
       <Text
         style={{
           color: "#16161A",
@@ -52,11 +54,13 @@ const AuthInput: React.FC<IProps> = ({
           paddingLeft: 0,
           width: "100%",
         }}
+        contentStyle={{ margin: 0 }}
         maxLength={maxLength}
         onBlur={onBlur}
         right={rightIcon}
         left={leftIcon}
         keyboardType={keyboardType}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );

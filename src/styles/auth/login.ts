@@ -3,8 +3,6 @@ import { StyleSheet } from "react-native";
 export const loginStyles = StyleSheet.create({
   container: {
     flex: 1,
-    position: "relative",
-    justifyContent: "center",
     backgroundColor: "#16161A",
     paddingHorizontal: 30,
   },
@@ -14,9 +12,9 @@ export const loginStyles = StyleSheet.create({
     padding: 15,
   },
   logoContainer: {
-    position: "absolute",
-    top: 70,
+    marginTop: 80,
     alignSelf: "center",
+    marginBottom: 10,
   },
   imageContainer: {
     alignItems: "center",
@@ -50,5 +48,21 @@ export const loginStyles = StyleSheet.create({
   },
   formContainer: {
     marginTop: 20,
+  },
+  forgotPasswordText: {
+    color: "#72757E",
+    fontSize: 12,
+    fontWeight: "400",
+    fontFamily: "Bahnschrift",
+    textAlign: "right",
+  },
+  linkText: {
+    color: "#7F5AF0",
+    fontSize: 13,
+    fontWeight: "600",
+    fontFamily: "Bahnschrift",
+    textAlign: "center",
+    textDecorationStyle: "solid",
+    textDecorationLine: "underline",
   },
 });

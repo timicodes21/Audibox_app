@@ -11,6 +11,7 @@ export type AuthStackParamList = {
   Welcome: undefined;
   Signup: undefined;
   Login: undefined;
+  Verification: undefined;
 };
 
 type WelcomeProps = NativeStackScreenProps<AuthStackParamList, "Welcome">;
@@ -21,6 +22,21 @@ type WelcomeProps = NativeStackScreenProps<AuthStackParamList, "Welcome">;
 export type WelcomeScreenNavigationProp = NativeStackNavigationProp<
   AuthStackParamList,
   "Welcome"
+>;
+
+export type LoginScreenNavigationProp = NativeStackNavigationProp<
+  AuthStackParamList,
+  "Login"
+>;
+
+export type SignupScreenNavigationProp = NativeStackNavigationProp<
+  AuthStackParamList,
+  "Signup"
+>;
+
+export type VerificationScreenNavigationProp = NativeStackNavigationProp<
+  AuthStackParamList,
+  "Verification"
 >;
 
 export type WelcomeScreenRouteProp = RouteProp<AuthStackParamList, "Welcome">;

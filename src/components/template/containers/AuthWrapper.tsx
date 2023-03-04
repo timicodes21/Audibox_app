@@ -11,16 +11,19 @@ const AuthWrapper: React.FC<IProps> = ({ children }) => {
   const { AudiIcon } = useIcons();
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <View style={styles.imageContainer}>
-          <AudiIcon width={30} height={30} />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="always"
+      >
+        <View style={styles.logoContainer}>
+          <View style={styles.imageContainer}>
+            <AudiIcon width={30} height={30} />
+          </View>
+          <Text style={styles.logoText}>AudiBox</Text>
         </View>
-        <Text style={styles.logoText}>AudiBox</Text>
-      </View>
 
-      <View style={styles.whiteWrapper}>
-        <ScrollView>{children}</ScrollView>
-      </View>
+        <View style={styles.whiteWrapper}>{children}</View>
+      </ScrollView>
     </View>
   );
 };
