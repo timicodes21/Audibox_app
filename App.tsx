@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { MainStackParamList } from "./src/types/navigators";
+import AuthNavigator from "./src/navigators/AuthNavigator";
+import { useFonts } from "expo-font";
+import { Provider as PaperProvider } from "react-native-paper";
+import CustomStatusBar from "./src/components/molecules/statusBar/CustomStatusBar";
 
 export default function App() {
+  const Stack = createStackNavigator<MainStackParamList>();
+  const [loaded] = useFonts({
+    Bahnschrift: require("./assets/fonts/Bahnschrift.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <PaperProvider>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Auth"
+            component={AuthNavigator}
+            options={{ headerShown: false }}
+          ></Stack.Screen>
+          <Stack.Screen
+            name="Dashboard"
+            component={AuthNavigator}
+            options={{ headerShown: false }}
+          ></Stack.Screen>
+        </Stack.Navigator>
+      </PaperProvider>
+      <CustomStatusBar />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
